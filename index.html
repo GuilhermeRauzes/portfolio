@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guilherme Rauzes - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center p-6 bg-zinc-900 shadow-md">
+    <h1 class="text-2xl font-bold text-blue-500">&lt;Guilherme/&gt;</h1>
+    <nav>
+      <ul class="flex space-x-6 text-white">
+        <li><a href="index.html" class="hover:text-blue-400 transform transition-transform duration-200 hover:scale-110"><span class="lang-pt">Sobre</span><span class="lang-en hidden">About</span></a></li>
+        <li><a href="competencias.html" class="hover:text-blue-400 transform transition-transform duration-200 hover:scale-110"><span class="lang-pt">Competências</span><span class="lang-en hidden">Skills</span></a></li>
+        <li><a href="projetos.html" class="hover:text-blue-400 transform transition-transform duration-200 hover:scale-110"><span class="lang-pt">Projetos</span><span class="lang-en hidden">Projects</span></a></li>
+      </ul>
+    </nav>
+    <div class="flex space-x-6">
+      <a href="https://wa.me/5541995596403" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full flex items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <i class="fab fa-whatsapp text-xl mr-2"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/guilherme-rauzes-8a4306255/" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full flex items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <i class="fab fa-linkedin-in text-xl mr-2"></i>
+      </a>
+      <a href="https://github.com/GuilhermeRauzes" class="bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-full flex items-center transition-transform duration-300 ease-in-out transform hover:scale-110">
+        <i class="fab fa-github text-xl mr-2"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- Sobre -->
+  <main class="flex flex-col md:flex-row items-center justify-center px-10 py-20 bg-gradient-to-b from-black via-blue-900 to-black">
+    <!-- Conteúdo da esquerda -->
+    <div class="max-w-2xl space-y-6 md:max-w-xl">
+      <p class="text-2xl font-semibold text-blue-300 mb-6 lang-pt">Olá Mundo!</p>
+      <p class="text-2xl font-semibold text-blue-300 mb-6 hidden lang-en">Hello World!</p>
+
+      <h2 class="text-5xl font-bold mt-2 lang-pt">Eu sou Guilherme Rauzes.</h2>
+      <h2 class="text-5xl font-bold mt-2 hidden lang-en">I'm Guilherme Rauzes.</h2>
+
+      <p class="text-lg text-gray-300 mt-4 lang-pt">
+        Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia, programação e desenvolvimento de soluções inovadoras.
+        Tenho experiência prática em desenvolvimento fullstack, com foco em front-end e back-end, além de habilidades em manipulação de dados e metodologias ágeis.
+      </p>
+      <p class="text-lg text-gray-300 mt-4 hidden lang-en">
+        I'm a student of System Analysis and Development, passionate about technology, programming, and building innovative solutions.
+        I have practical experience in fullstack development, focusing on both front-end and back-end, along with data handling and agile methodologies.
+      </p>
+
+      <!-- Botão de download do currículo -->
+      <a id="downloadBtn" href="https://drive.google.com/uc?export=download&id=1iUXmlq46a8j-l0wECJpgIlJL9vgwqtr9" download class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center mt-6 transform transition-transform hover:scale-105">
+        <i class="fas fa-download mr-2"></i>
+        <span class="lang-pt">Ver Currículo</span>
+        <span class="lang-en hidden">Download Resume</span>
+      </a>
+    </div>
+
+    <!-- Foto na direita -->
+    <div class="mt-8 md:mt-0 md:ml-8">
+      <img src="images/perfil.jpg" alt="Guilherme Rauzes" class="w-64 h-64 rounded-full border-4 border-blue-500 shadow-lg">
+    </div>
+  </main>
+
+  <!-- Botão de idioma no canto inferior direito -->
+  <button id="toggleLang" class="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-transform hover:scale-105 z-50">
+    EN
+  </button>
+
+  <!-- Script troca de idioma -->
+  <script>
+    const btn = document.getElementById("toggleLang");
+    let isEnglish = false;
+    
+    btn.addEventListener("click", () => {
+      isEnglish = !isEnglish;
+      document.querySelectorAll(".lang-pt").forEach(el => el.classList.toggle("hidden", isEnglish));
+      document.querySelectorAll(".lang-en").forEach(el => el.classList.toggle("hidden", !isEnglish));
+      
+      // Atualiza o link do currículo com base no idioma
+      const downloadBtn = document.getElementById("downloadBtn");
+      if (isEnglish) {
+        // Alterando o link para o currículo em inglês
+        downloadBtn.href = "https://drive.google.com/uc?export=download&id=1OX10gZ6yoIceSzwMVwZ1MTXkksQNmVTt";
+      } else {
+        // Retorna o link para o currículo em português
+        downloadBtn.href = "https://drive.google.com/uc?export=download&id=1iUXmlq46a8j-l0wECJpgIlJL9vgwqtr9";
+      }
+      
+      btn.textContent = isEnglish ? "PT" : "EN";
+    });
+  </script>
+
+</body>
+</html>
