@@ -20,8 +20,7 @@ This is my personal portfolio, built using HTML5, TailwindCSS, and JavaScript, w
 
 🔗 [portfoliorauzes.rf.gd](https://portfoliorauzes.rf.gd)
 
-📄 [Download Résumé (PDF)](https://drive.google.com/uc?export=download&id=1iUXmlq46a8j-l0wECJpgIlJL9vgwqtr9)
-
+📄 [Download Résumé (PDF)](https://drive.google.com/file/d/1OX10gZ6yoIceSzwMVwZ1MTXkksQNmVTt/view?usp=sharing)
 ## 🤝 Contact
 
 - [WhatsApp](https://wa.me/5541995596403)
